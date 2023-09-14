@@ -73,3 +73,13 @@
 /Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam/Uark_Exam/obj/Debug/Uark_Exam.csproj.CopyComplete
 /Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam/Uark_Exam/obj/Debug/Uark_Exam.dll
 /Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam/Uark_Exam/obj/Debug/Uark_Exam.pdb
+/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam/Uark_Exam/bin/Uark_Exam.Repository.dll
+/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam/Uark_Exam/bin/Comman.Data.Dapper.dll
+/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam/Uark_Exam/bin/Dapper.SimpleCRUD.dll
+/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam/Uark_Exam/bin/Dapper.dll
+/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam/Uark_Exam/bin/Uark_Exam.Repository.pdb
+/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam/Uark_Exam/bin/Comman.Data.Dapper.pdb
+/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam/Uark_Exam/bin/Dapper.SimpleCRUD.pdb
+/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam/Uark_Exam/bin/Dapper.SimpleCRUD.xml
+/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam/Uark_Exam/bin/Dapper.pdb
+/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam/Uark_Exam/bin/Dapper.xml

@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uark_Exam", "Uark_Exam\Uark_Exam.csproj", "{C72ACA89-D1A9-4FD4-BF7D-661EB27E0C17}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uark_Exam.Repository", "..\Uark_Exam.Repository\Uark_Exam.Repository.csproj", "{EF623EC7-890A-4802-A7A9-5BA3F77D5B05}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{C72ACA89-D1A9-4FD4-BF7D-661EB27E0C17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C72ACA89-D1A9-4FD4-BF7D-661EB27E0C17}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C72ACA89-D1A9-4FD4-BF7D-661EB27E0C17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF623EC7-890A-4802-A7A9-5BA3F77D5B05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF623EC7-890A-4802-A7A9-5BA3F77D5B05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF623EC7-890A-4802-A7A9-5BA3F77D5B05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF623EC7-890A-4802-A7A9-5BA3F77D5B05}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,16 @@
+/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam.Repository/bin/Debug/Uark_Exam.Repository.dll
+/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam.Repository/bin/Debug/Uark_Exam.Repository.pdb
+/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam.Repository/bin/Debug/Comman.Data.Dapper.dll
+/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam.Repository/bin/Debug/Dapper.dll
+/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam.Repository/bin/Debug/Dapper.SimpleCRUD.dll
+/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam.Repository/bin/Debug/System.ComponentModel.Annotations.dll
+/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam.Repository/bin/Debug/Comman.Data.Dapper.pdb
+/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam.Repository/bin/Debug/Dapper.pdb
+/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam.Repository/bin/Debug/Dapper.xml
+/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam.Repository/bin/Debug/Dapper.SimpleCRUD.pdb
+/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam.Repository/bin/Debug/Dapper.SimpleCRUD.xml
+/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam.Repository/obj/Debug/Uark_Exam.Repository.csproj.AssemblyReference.cache
+/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam.Repository/obj/Debug/Uark_Exam.Repository.csproj.CoreCompileInputs.cache
+/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam.Repository/obj/Debug/Uark_Exam.Repository.csproj.CopyComplete
+/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam.Repository/obj/Debug/Uark_Exam.Repository.dll
+/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam.Repository/obj/Debug/Uark_Exam.Repository.pdb

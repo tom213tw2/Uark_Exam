@@ -176,6 +176,12 @@
         <Content Include="Scripts\jquery-3.3.1.slim.min.map"/>
         <Content Include="Scripts\jquery-3.3.1.min.map"/>
     </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\..\Uark_Exam.Repository\Uark_Exam.Repository.csproj">
+        <Project>{ef623ec7-890a-4802-a7a9-5ba3f77d5b05}</Project>
+        <Name>Uark_Exam.Repository</Name>
+      </ProjectReference>
+    </ItemGroup>
     <PropertyGroup>
         <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
         <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
