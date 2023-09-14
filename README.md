@@ -1,14 +1,14 @@
 # Uark_Exam
 
-## orgs Table
+## Orgs Table
 
-| Column Name  | Data Type    | Nullable | Primary Key | Foreign Key |
-| ------------ | ------------ | -------- | ----------- | ----------- |
-| id           | INT          | No       | Yes         |             |
-| title        | NVARCHAR(255)| No       | No          |             |
-| org_no       | INT          | No       | No          |             |
-| created_at   | DATETIME     | No       | No          |             |
-| updated_at   | DATETIME     | No       | No          |             |
+| Column Name  | Data Type       | Nullable | Primary Key | Foreign Key |
+| ------------ | ------------    | -------- | ----------- | ----------- |
+| id           | uniqueidentifier| No       | Yes         |             |
+| title        | NVARCHAR(255)   | No       | No          |             |
+| org_no       | INT             | No       | No          |             |
+| created_at   | DATETIME        | No       | No          |             |
+| updated_at   | DATETIME        | No       | No          |             |
 
 
 ## Users Table
