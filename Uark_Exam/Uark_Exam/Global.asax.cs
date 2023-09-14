@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Newtonsoft.Json;
+using NLog;
 
 namespace Uark_Exam
 {
@@ -16,6 +18,25 @@ namespace Uark_Exam
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+        }
+
+        protected void Application_Error(object sender, EventArgs e)
+        {
+            Logger logger = LogManager.GetCurrentClassLogger();
+            Exception unhandledException = Server.GetLastError();
+            var guId = HttpContext.Current.Items["RequestGUID"];
+            var httpException = unhandledException;
+
+            if (httpException == null) return;
+            Server.ClearError();
+
+            logger.Error($"[{guId}][Response] Application occurred Exception");
+            logger.Error($"[{guId}][Exception] :: {unhandledException.Message}");
+            logger.Error($"[{guId}][Exception] :: {unhandledException.StackTrace}");
+            
+
+
+            Response.Redirect($"~/Error/Index");
         }
     }
 }

@@ -1,0 +1,12 @@
+@using Newtonsoft.Json
+@model System.Collections.Generic.IEnumerable<Uark_Exam.Repository.Madal.DB.Orgs>
+
+@{
+    ViewBag.Title = "title";
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+    <label>@JsonConvert.SerializeObject(item);</label>
+}
