@@ -23,6 +23,8 @@ namespace Uark_Exam.Repository.Madal.DB
         [Column("name")]
         [DisplayName("姓名")]
         public string Name { get; set; }
+        
+        
 
         [Column("birthday")]
         [DisplayName("生日")]
@@ -39,6 +41,11 @@ namespace Uark_Exam.Repository.Madal.DB
         [DisplayName("帳號")]
         [StringLength(maximumLength:10,MinimumLength = 5)]
         public string Account { get; set; }
+
+        [Dapper.Required]
+        [Column("password")]
+        [DisplayName("密碼")]
+        public string Password { get; set; }
 
         [Column("status")]
         [DisplayName("狀態")]

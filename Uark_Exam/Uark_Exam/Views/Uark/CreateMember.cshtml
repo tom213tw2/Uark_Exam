@@ -1,0 +1,39 @@
+@model  Uark_Exam.ViewModal.LoginModal
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Create Member</title>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+<div>
+    @using (Html.BeginForm("CreateMember", "Uark", FormMethod.Post))
+    {
+        <div class="container-fluid" style="width:90%">
+            <div class="form-horizontal">
+                <div class="panel panel-info">
+                    <div class="panel-heading">Create Member</div>
+
+                    <div class="panel-body">
+                        
+                    </div>
+                    <div class="panel-footer text-left">
+                        <button type="submit" class="btn btn-info">Submit</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    }
+</div>
+</body>
+</html>
