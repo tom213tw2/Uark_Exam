@@ -1,3 +1,4 @@
+using System;
 using System.Web.Mvc;
 using Uark_Exam.Filter;
 using Uark_Exam.Interface;
@@ -63,8 +64,9 @@ namespace Uark_Exam.Controllers
             var orgList = _uarkService.GetOrgList();
             return View(orgList);
         }
-
-        public JsonResult GetOrdList()
+        
+        [HttpPost]
+        public JsonResult GetOrgList()
         {
             var orgList = _uarkService.GetOrgList();
             return new JsonResult
@@ -75,6 +77,23 @@ namespace Uark_Exam.Controllers
             };
         }
         
+        public ActionResult UsersGrid()
+        {
+            var usersList = _uarkService.GetUsersList();
+            return View(usersList);
+        }
+    
+        [HttpPost]
+        public JsonResult ApproveUser(Guid id)
+        {
+            var IsSuccess = _uarkService.ApproveUser(id);
+            return new JsonResult
+            {
+                Data = new {IsSuccess=IsSuccess},
+                MaxJsonLength = int.MaxValue,
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+            };
+        }
         
        
     }

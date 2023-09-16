@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Uark_Exam.ViewModal;
 
@@ -9,5 +10,7 @@ namespace Uark_Exam.Interface
         List<OrgModal> GetOrgList();
         OrgModal CreateOrg(OrgModal orgModal);
         LoginModal CreateMember(LoginModal loginModal);
+        List<UsersListModal> GetUsersList();
+        bool ApproveUser(Guid id);
     }
 }

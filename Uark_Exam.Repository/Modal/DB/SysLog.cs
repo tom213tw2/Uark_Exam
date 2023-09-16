@@ -12,6 +12,7 @@ namespace Uark_Exam.Repository.Madal.DB
         [Column("seq_no")]
         [DisplayName("SeqNo")]
         [IgnoreInsert]
+        [IgnoreUpdate]
         public Guid SeqNo { get; set; } 
     
         [Required]
@@ -33,6 +34,7 @@ namespace Uark_Exam.Repository.Madal.DB
         [Column("created_at")]
         [DisplayName("建立日期")]
         [IgnoreInsert]
+        [IgnoreUpdate]
         public DateTime CreatedDatTime { get; set; } 
     }
 }

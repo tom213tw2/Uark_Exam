@@ -1,48 +1,47 @@
 using System;
-using Dapper;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Uark_Exam.Repository.Madal.DB
+namespace Uark_Exam.ViewModal
 {
-    [Table("vUsers", Schema = "dbo")]
-    public class vUsers
+    public class UsersListModal
     {
         [Key]
         [Required]
-        [Column("id")]
+        [DisplayName("Id")]
         public Guid Id { get; set; }
 
         [Required]
-        [Column("name")]
+        [DisplayName("Name")]
         public string Name { get; set; }
 
         [Required]
-        [Column("account")]
+        [DisplayName("Account")]
         public string Account { get; set; }
 
         [Required]
-        [Column("status")]
+        [DisplayName("Status")]
         public string Status { get; set; }
 
         [Required]
-        [Column("org_no")]
+        [DisplayName("OrgNo")]
         public int OrgNo { get; set; }
 
         [Required]
-        [Column("title")]
+        [DisplayName("Title")]
         public string Title { get; set; }
 
         [Required]
-        [Column("ipaddress")]
+        [DisplayName("Ipaddress")]
         public string Ipaddress { get; set; }
         
         [Required]
-        [Column("login_at")]
+        [DisplayName("LoginDateTime")]
         public DateTime? LoginDateTime { get; set; }
         
         [Required]
-        [Column("created_at")]
+        [DisplayName("CreateDate")]
         public DateTime? CreateDateTime { get; set; }
-        
-        
     }
 }

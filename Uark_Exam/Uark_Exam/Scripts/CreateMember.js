@@ -1,7 +1,7 @@
 $(function (){
     $('#OrgList').on('click',function ()
     {
-        let data=  GetAjaxData('Post',false,GetOrdListUrl,null);
+        let data=  GetAjaxData('Post',false,GetOrgListUrl,null);
         let appendStr='';
         $('tbody').empty();
         $.each(data.responseJSON,function (index,ele){

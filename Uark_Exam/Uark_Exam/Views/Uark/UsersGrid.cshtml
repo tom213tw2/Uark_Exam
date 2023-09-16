@@ -1,0 +1,71 @@
+@model List<Uark_Exam.ViewModal.UsersListModal>
+
+@{
+    ViewBag.Title = "UsersGrid";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script>
+$(function (){
+    GetDataWithNoServerSide('GridTable');
+   $('.approve').on('click',function ()
+   {
+       
+     let userid = $(this).data('id');
+     let ajaxdata= GetAjaxData('Post','false','@Url.Action("ApproveUser")',{"id":userid});
+     ajaxdata.done(function (data){
+            if(data.IsSuccess)
+            {
+                alert('User Approved');
+                location.reload();
+            }
+            else 
+            {
+                alert('User Not Approved');
+            }
+        });
+    
+    
+
+     
+   });
+});
+</script>
+<div class="table-responsive">
+    <table class="table table-striped table-bordered table-reflow" id="GridTable" style="overflow: hidden" cellspacing="0" width="100%">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Account</th>
+            <th>Status</th>
+            <th>OrgNo</th>
+            <th>Title</th>
+            <th>Ipaddress</th>
+            <th>LoginDateTime</th>
+            <th>CreateDateTime</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+          @foreach (var item in Model)
+          {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Account</td>
+                    <td>@item.Status</td>
+                    <td>@item.OrgNo</td>
+                    <td>@item.Title</td>
+                    <td>@item.Ipaddress</td>
+                    <td>@item.LoginDateTime</td>
+                    <td>@item.CreateDateTime</td>
+                    <td>
+                        @if (item.Status=="Pending Approval")
+                        {
+                            <button type="button" class="approve btn btn-info" data-id="@item.Id">Approve</button>
+                        }
+                    </td>
+                </tr>
+          }
+        </tbody>
+    </table>
+</div>

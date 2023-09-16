@@ -17,6 +17,7 @@ namespace Uark_Exam.Service
         private ApplyFileRepository _applyFileRepository;
         private OrgsRepository _orgsRepository;
         private SysLogRepository _sysLogRepository;
+        private vUsersRepository _vUsersRepository;
 
         public UarkService()
         {
@@ -24,6 +25,7 @@ namespace Uark_Exam.Service
             _applyFileRepository = new ApplyFileRepository(QueryRepository.Default);
             _orgsRepository = new OrgsRepository(QueryRepository.Default);
             _sysLogRepository = new SysLogRepository(QueryRepository.Default);
+            _vUsersRepository = new vUsersRepository(QueryRepository.Default);
         }
 
         public LoginModal ValidateUser(LoginModal loginModal)
@@ -40,17 +42,19 @@ namespace Uark_Exam.Service
                 var userData = usersList.FirstOrDefault();
                 if (userData?.Password == loginModal.Password)
                 {
-                    if (userData?.Status == "Pending Approval")
+                    switch (userData?.Status)
                     {
-                        loginModal.ErrorMessage = "This account has not been approve yet.";
-                        return loginModal;
-                    }
-                    else
-                    {
-                        userData.CopyPropertiesTo(loginModal);
-                        HttpContext.Current.Session["UserName"] = loginModal.Name;
-
-                        return loginModal;
+                        case "Pending Approval":
+                            loginModal.ErrorMessage = "This account has not been approve yet.";
+                            return loginModal;
+                        case "Approved":
+                            loginModal.ErrorMessage =
+                                "This account has been approved,please open email link to active.";
+                            break;
+                        default:
+                            HttpContext.Current.Session["UserName"] = userData.Name;
+                            UpdateSyslog(userData);
+                            return loginModal;
                     }
                 }
                 else
@@ -59,26 +63,54 @@ namespace Uark_Exam.Service
                     return loginModal;
                 }
             }
+
+            return loginModal;
+        }
+
+        private void UpdateSyslog(Users userData)
+        {
+            var sysLogList = _sysLogRepository.GetList(new { account = userData.Account }).ToList();
+            if (sysLogList.Any())
+            {
+                var sysLog = sysLogList.FirstOrDefault();
+                sysLog.LoginDateTime = DateTime.Now;
+                sysLog.IpAddress = HttpContext.Current.Request.UserHostAddress;
+                _sysLogRepository.Update(sysLog);
+            }
+            else
+            {
+                var sysLog = new SysLog();
+                sysLog.Account = userData.Account;
+                sysLog.IpAddress = HttpContext.Current.Request.UserHostAddress;
+                sysLog.LoginDateTime = DateTime.Now;
+                _sysLogRepository.Insert(sysLog);
+            }
         }
 
         public LoginModal CreateMember(LoginModal loginModal)
         {
-            var usersList = _usersRepository.GetList(new { account = loginModal.Account });
-            if (usersList.Any())
+            var usersList=_usersRepository.GetList("where account=@account or name=@name", new { account = loginModal.Account ,name=loginModal.Name});
+           if (usersList.Any())
             {
-                loginModal.ErrorMessage = "this account is already been added!";
+                var user = usersList.FirstOrDefault();
+                if (user.Account == loginModal.Account)
+                {
+                    loginModal.ErrorMessage = "this account is already been added!";
+                   
+                }
+                else if (user.Name == loginModal.Name)
+                {
+                    loginModal.ErrorMessage = "this name is already been added!";
+                }
                 return loginModal;
+               
             }
             else
             {
                 var users = new Users();
                 loginModal.CopyPropertiesTo(users);
                 _usersRepository.Insert(users);
-                var sysLog = new SysLog();
-                sysLog.Account = loginModal.Account;
-                sysLog.IpAddress = HttpContext.Current.Request.UserHostAddress;
-                sysLog.LoginDateTime = null;
-                _sysLogRepository.Insert(sysLog);
+                UpdateSyslog(users);
                 return loginModal;
             }
         }
@@ -112,6 +144,32 @@ namespace Uark_Exam.Service
                 _orgsRepository.Insert(org);
                 return orgModal;
             }
+        }
+
+        public List<UsersListModal> GetUsersList()
+        {
+            var usersList = _vUsersRepository.GetList().ToList();
+            var usersModalList = new List<UsersListModal>();
+            foreach (var users in usersList)
+            {
+                var usersModal = new UsersListModal();
+                users.CopyPropertiesTo(usersModal);
+                usersModalList.Add(usersModal);
+            }
+
+            return usersModalList;
+        }
+
+        //need to refactor
+        public bool ApproveUser(Guid id)
+        {
+            var usersList = _usersRepository.GetList(new { id = id }).ToList();
+            if (!usersList.Any()) return false;
+            var user = usersList.FirstOrDefault();
+            user.Status = "Approved";
+            user.UpdatedDateTime = DateTime.Now;
+            _usersRepository.Update(user);
+            return true;
         }
     }
 }

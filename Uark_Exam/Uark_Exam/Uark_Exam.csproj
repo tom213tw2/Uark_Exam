@@ -138,6 +138,7 @@
         <Compile Include="ViewModal\BaseModal.cs" />
         <Compile Include="ViewModal\LoginModal.cs" />
         <Compile Include="ViewModal\OrgModal.cs" />
+        <Compile Include="ViewModal\UsersListModal.cs" />
     </ItemGroup>
     <ItemGroup>
         <Content Include="Content\bootstrap-datetimepicker-build.less" />
@@ -265,6 +266,7 @@
         <Content Include="Views\Uark\Login.cshtml" />
         <Content Include="Views\Uark\OrgListPartial.cshtml" />
         <Content Include="Views\Uark\OrgsGrid.cshtml" />
+        <Content Include="Views\Uark\UsersGrid.cshtml" />
         <Content Include="Web.config" />
         <Content Include="Web.Debug.config">
             <DependentUpon>Web.config</DependentUpon>
