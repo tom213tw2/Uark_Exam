@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -37,7 +38,7 @@ namespace Uark_Exam.Service
             else
             {
                 var userData = usersList.FirstOrDefault();
-                if (userData?.Password == loginModal.PassWord )
+                if (userData?.Password == loginModal.Password)
                 {
                     if (userData?.Status == "Pending Approval")
                     {
@@ -51,13 +52,34 @@ namespace Uark_Exam.Service
 
                         return loginModal;
                     }
-                  
                 }
                 else
                 {
                     loginModal.ErrorMessage = "Password is incorrect.";
                     return loginModal;
                 }
+            }
+        }
+
+        public LoginModal CreateMember(LoginModal loginModal)
+        {
+            var usersList = _usersRepository.GetList(new { account = loginModal.Account });
+            if (usersList.Any())
+            {
+                loginModal.ErrorMessage = "this account is already been added!";
+                return loginModal;
+            }
+            else
+            {
+                var users = new Users();
+                loginModal.CopyPropertiesTo(users);
+                _usersRepository.Insert(users);
+                var sysLog = new SysLog();
+                sysLog.Account = loginModal.Account;
+                sysLog.IpAddress = HttpContext.Current.Request.UserHostAddress;
+                sysLog.LoginDateTime = null;
+                _sysLogRepository.Insert(sysLog);
+                return loginModal;
             }
         }
 
@@ -71,22 +93,23 @@ namespace Uark_Exam.Service
                 org.CopyPropertiesTo(orgModal);
                 orgModalList.Add(orgModal);
             }
+
             return orgModalList;
         }
 
         public OrgModal CreateOrg(OrgModal orgModal)
         {
-            var orgsList = _orgsRepository.GetList(new {org_no=orgModal.OrgNo}).ToList();
-            if (orgsList.Any())
+            var orgList = _orgsRepository.GetList(new { org_no = orgModal.OrgNo }).ToList();
+            if (orgList.Any())
             {
                 orgModal.ErrorMessage = "this OrgNo is already been added!";
                 return orgModal;
             }
             else
             {
-                var orgs = new Orgs();
-                orgModal.CopyPropertiesTo(orgs);
-                _orgsRepository.Insert(orgs);
+                var org = new Orgs();
+                orgModal.CopyPropertiesTo(org);
+                _orgsRepository.Insert(org);
                 return orgModal;
             }
         }

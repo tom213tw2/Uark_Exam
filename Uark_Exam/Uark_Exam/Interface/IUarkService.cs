@@ -8,5 +8,6 @@ namespace Uark_Exam.Interface
         LoginModal ValidateUser(LoginModal loginModal);
         List<OrgModal> GetOrgList();
         OrgModal CreateOrg(OrgModal orgModal);
+        LoginModal CreateMember(LoginModal loginModal);
     }
 }

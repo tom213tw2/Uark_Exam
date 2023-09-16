@@ -116,9 +116,9 @@
                             @Html.TextBoxFor(s=>s.Account,new { @class="form-control",@placeholder="Account"})
                             <br/>
                             @Html.ValidationMessageFor(s=>s.Account,null,new {@class="text-danger" })
-                            @Html.PasswordFor(s=>s.PassWord,new {@class="form-control",@placeholder="Password"})
+                            @Html.PasswordFor(s=>s.Password,new {@class="form-control",@placeholder="Password"})
                             <br/>
-                            @Html.ValidationMessageFor(s=>s.PassWord,null,new {@class="text-danger" })
+                            @Html.ValidationMessageFor(s=>s.Password,null,new {@class="text-danger" })
                             <button class="btn btn-lg btn-primary btn-block" type="submit">
                                 Sign in
                             </button>

@@ -1,13 +1,12 @@
 function GetDataWithNoServerSide(tableId) {
     $("#" + tableId).DataTable({
-        "dom": "<'row'<'col-sm-6'B><'col-sm-6 text-right'l>>" +
+        "dom": "<'row'<'col-sm-6'B><'col-sm-6 text-right'f>>" +
             "<'row'<'col-sm-12'tr>>" +
-            "<'row'<'col-sm-5'i><'col-sm-7'p>>",    
-        "stateSave": true,
-        "searching": false,
+            "<'row'<'col-sm-5'i><'col-sm-7'p>>",          
+        "searching": true,
         "processing": true,
         "pageLength": 20,      
-        "lengthChange": true,
+        "lengthChange": false,
         "lengthMenu": [[10, 15, 20, 50], [10, 15, 20, 50]],        
         "order": [0, "asc"],
         buttons: [
@@ -39,8 +38,7 @@ $(function () {
         '<span class= "glyphicon glyphicon-calendar" ></span >' +
         ' </span >');
     $('.datepicker').attr('readonly','readonly')
-    $('.picker').datetimepicker({
-        locale: 'zh-tw',
+    $('.picker').datetimepicker({       
         format: 'YYYY/MM/DD',
         showTodayButton: true,
         widgetPositioning: {

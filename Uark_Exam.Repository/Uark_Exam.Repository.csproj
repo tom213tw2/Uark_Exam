@@ -54,16 +54,18 @@
         <Reference Include="System.Xml"/>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Madal\DB\ApplyFile.cs" />
-        <Compile Include="Madal\DB\Orgs.cs" />
-        <Compile Include="Madal\DB\SysLog.cs" />
-        <Compile Include="Madal\DB\Users.cs" />
+        <Compile Include="Modal\DB\ApplyFile.cs" />
+        <Compile Include="Modal\DB\Orgs.cs" />
+        <Compile Include="Modal\DB\SysLog.cs" />
+        <Compile Include="Modal\DB\Users.cs" />
+        <Compile Include="Modal\DB\vUsers.cs" />
         <Compile Include="Properties\AssemblyInfo.cs"/>
         <Compile Include="QueryRepository.cs" />
         <Compile Include="Repository\ApplyFileRepository.cs" />
         <Compile Include="Repository\OrgsRepository.cs" />
         <Compile Include="Repository\SysLogRepository.cs" />
         <Compile Include="Repository\UsersRepository.cs" />
+        <Compile Include="Repository\vUsersRepository.cs" />
     </ItemGroup>
     <ItemGroup>
       <None Include="packages.config" />

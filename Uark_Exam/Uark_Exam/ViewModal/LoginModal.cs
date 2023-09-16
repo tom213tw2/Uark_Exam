@@ -11,11 +11,13 @@ namespace Uark_Exam.ViewModal
         [Required]
         [DisplayName("Id")]
         public Guid Id { get; set; }
-
-        [Required]
-        [Column("org_id")]
+       
         [DisplayName("OrgId")]
         public Guid OrgId { get; set; }
+
+        [Required]
+        [DisplayName("OrgName")]
+        public string OrgName { get; set; }
 
         [Required]
         [Column("name")]
@@ -28,8 +30,8 @@ namespace Uark_Exam.ViewModal
 
         [Required]
         [PasswordPropertyText]
-        [DisplayName("PassWord")]
-        public string PassWord { get; set; }
+        [DisplayName("Password")]
+        public string Password { get; set; }
     
         [Required]
         [Column("email")]
@@ -45,7 +47,5 @@ namespace Uark_Exam.ViewModal
         [Column("status")] 
         [DisplayName("Status")] 
         public string Status { get; set; } = "Pending Approval";
-
-        
     }
 }

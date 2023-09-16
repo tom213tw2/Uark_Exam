@@ -19,20 +19,70 @@
     @Scripts.Render("~/bundles/datetimepicker")
     @Scripts.Render("~/bundles/Common")
     @Styles.Render("~/Content/datetimepicker")
+    <script type="text/javascript" src="~/Scripts/CreateMember.js"></script>
+    <script>
+     let GetOrdListUrl='@Url.Action("GetOrdList")';
+       $(function (){            
+            let isSuccess = '@Model.IsSuccess'=="True";
+            if (!isSuccess)
+            {
+                alert("@Model.ErrorMessage");
+            }         
+             
+         });
+    </script>
 </head>
 <body>
+
 <div>
     @using (Html.BeginForm("CreateMember", "Uark", FormMethod.Post))
     {
-        <div class="container-fluid" style="width:90%">
+        <div class="container container-fluid" style="width:90%">
             <div class="form-horizontal">
                 <div class="panel panel-info">
                     <div class="panel-heading">Create Member</div>
 
                     <div class="panel-body">
                         <div class="form-group">
-                            
+                            @Html.LabelFor(s => s.Name, new { @class = "col-md-3 control-label" })
+                            <div class="col-md-3">
+                                @Html.TextBoxFor(s => s.Name, new { @class = "form-control", @placeholder = "Please enter Name" })
+                                @Html.ValidationMessageFor(s => s.Name, null, new { @class = "text-danger" })
+                            </div>
+                            @Html.LabelFor(s => s.Birthday, new { @class = "col-md-3 control-label" })
+                            <div class="col-md-3">
+                                @Html.TextBoxFor(s => s.Birthday, new { @class = "form-control datepicker" })
+                            </div>
                         </div>
+                        <div class="form-group">
+                            @Html.LabelFor(s => s.OrgName, new { @class = "col-md-3 control-label" })
+                            <div class="col-md-2">
+                                @Html.TextBoxFor(s => s.OrgName, new { @class = "form-control", @readonly = "readonly", @id = "OrgName" })
+                                @Html.ValidationMessageFor(s=>s.OrgName,null,new {@class="text-danger"})
+                                @Html.HiddenFor(s => s.OrgId, new { @id = "OrgId" })
+                            </div>
+                            <div class="col-md-1">
+                                <button id="OrgList" class="btn btn-info" onclick="return false;" data-toggle="modal">Org List</button>
+                            </div>
+                            @Html.LabelFor(s=>s.Email,new {@class="control-label col-md-3"})
+                            <div class="col-md-3">
+                                @Html.TextBoxFor(s=>s.Email,new {@class="form-control",@type="email",@placeholder="Please enter email"})
+                                @Html.ValidationMessageFor(s=>s.Email,null,new {@class="text-danger"})
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(s=>s.Account,new {@class="control-label col-md-3"})
+                            <div class="col-md-3">
+                                @Html.TextBoxFor(s=>s.Account,new {@class="form-control",@placeholder="Please enter account"})
+                                @Html.ValidationMessageFor(s=>s.Account,null,new {@class="text-danger"})
+                            </div>
+                            @Html.LabelFor(s=>s.Password,new {@class="control-label col-md-3"})
+                            <div class="col-md-3">
+                                @Html.PasswordFor(s=>s.Password,new {@class="form-control",@placeholder="Please enter password"})
+                                @Html.ValidationMessageFor(s=>s.Password,null,new {@class="text-danger"})
+                            </div>
+                        </div>
+
                     </div>
                     <div class="panel-footer text-left">
                         <button type="submit" class="btn btn-info">Submit</button>
@@ -42,6 +92,7 @@
             </div>
         </div>
     }
+    @Html.Partial("OrgListPartial")
 </div>
 </body>
 </html>

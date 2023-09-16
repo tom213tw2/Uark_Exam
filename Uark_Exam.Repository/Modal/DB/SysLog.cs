@@ -11,6 +11,7 @@ namespace Uark_Exam.Repository.Madal.DB
         [Required]
         [Column("seq_no")]
         [DisplayName("SeqNo")]
+        [IgnoreInsert]
         public Guid SeqNo { get; set; } 
     
         [Required]
@@ -19,18 +20,19 @@ namespace Uark_Exam.Repository.Madal.DB
         public string Account { get; set; } 
     
         [Required]
-        [Column("account")]
-        [DisplayName("帳號")]
+        [Column("ipaddress")]
+        [DisplayName("IpAddress")]
         public string IpAddress { get; set; }
     
         [Required]
         [Column("login_at")]
         [DisplayName("登入日期")]
-        public DateTime LoginDateTime { get; set; }
+        public DateTime? LoginDateTime { get; set; }
     
         [Required]
         [Column("created_at")]
         [DisplayName("建立日期")]
+        [IgnoreInsert]
         public DateTime CreatedDatTime { get; set; } 
     }
 }

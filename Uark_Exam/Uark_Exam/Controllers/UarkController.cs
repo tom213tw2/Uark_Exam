@@ -34,14 +34,14 @@ namespace Uark_Exam.Controllers
         [HttpGet]
         public ActionResult CreateMember()
         {
-            return View();
+            return View(new LoginModal());
         }
         
         [HttpPost]
         public ActionResult CreateMember(LoginModal loginModal)
-        {
-            
-            return View();
+        {   
+            _uarkService.CreateMember(loginModal);
+           return loginModal.IsSuccess ? (ActionResult)RedirectToAction("Index", "Home") : View(loginModal);
         }
         
         public ActionResult CreateOrgs()
@@ -62,6 +62,17 @@ namespace Uark_Exam.Controllers
         {
             var orgList = _uarkService.GetOrgList();
             return View(orgList);
+        }
+
+        public JsonResult GetOrdList()
+        {
+            var orgList = _uarkService.GetOrgList();
+            return new JsonResult
+            {
+                Data =orgList,
+                MaxJsonLength = int.MaxValue,
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+            };
         }
         
         

@@ -240,6 +240,7 @@
         <None Include="NLog.config" />
         <None Include="Scripts\jquery-3.3.1.intellisense.js" />
         <Content Include="Scripts\Common.js" />
+        <Content Include="Scripts\CreateMember.js" />
         <Content Include="Scripts\datatables.js" />
         <Content Include="Scripts\datatables.min.js" />
         <Content Include="Scripts\jquery-3.3.1.js" />
@@ -262,6 +263,7 @@
         <Content Include="Views\Uark\CreateOrgs.cshtml" />
         <Content Include="Views\Uark\Index.cshtml" />
         <Content Include="Views\Uark\Login.cshtml" />
+        <Content Include="Views\Uark\OrgListPartial.cshtml" />
         <Content Include="Views\Uark\OrgsGrid.cshtml" />
         <Content Include="Web.config" />
         <Content Include="Web.Debug.config">
