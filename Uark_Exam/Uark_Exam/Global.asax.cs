@@ -22,12 +22,11 @@ namespace Uark_Exam
 
         protected void Application_Error(object sender, EventArgs e)
         {
-            Logger logger = LogManager.GetCurrentClassLogger();
-            Exception unhandledException = Server.GetLastError();
+            var logger = LogManager.GetCurrentClassLogger();
+            var unhandledException = Server.GetLastError();
             var guId = HttpContext.Current.Items["RequestGUID"];
-            var httpException = unhandledException;
 
-            if (httpException == null) return;
+            if (unhandledException == null) return;
             Server.ClearError();
 
             logger.Error($"[{guId}][Response] Application occurred Exception");

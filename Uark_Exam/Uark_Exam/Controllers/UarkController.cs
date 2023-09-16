@@ -44,6 +44,26 @@ namespace Uark_Exam.Controllers
             return View();
         }
         
+        public ActionResult CreateOrgs()
+        {
+            return View(new OrgModal());
+        }
+        [HttpPost]
+        public ActionResult CreateOrgs(OrgModal orgModal)
+        {
+           _uarkService.CreateOrg(orgModal);
+           return orgModal.IsSuccess ? (ActionResult)RedirectToAction("OrgsGrid") : View(orgModal);
+
+
+        }
+        
+        [HttpGet]
+        public ActionResult OrgsGrid()
+        {
+            var orgList = _uarkService.GetOrgList();
+            return View(orgList);
+        }
+        
         
        
     }

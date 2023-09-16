@@ -17,7 +17,7 @@ namespace Uark_Exam.Filter
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
             var guId = GetGuId();
-            if (!filterContext.HttpContext.Items.Contains("RequestGUID"))
+            if (filterContext.HttpContext.Items.Contains("RequestGUID"))
             {
                 filterContext.HttpContext.Items["RequestGUID"] = guId;
             }

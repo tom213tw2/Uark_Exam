@@ -12,6 +12,7 @@ namespace Uark_Exam.Repository.Madal.DB
         [Required]
         [Column("Id")]
         [DisplayName("Id")]
+        [IgnoreInsert]
         public Guid Id { get; set; }
 
         [Required]
@@ -26,10 +27,12 @@ namespace Uark_Exam.Repository.Madal.DB
 
         [Column("created_at")]
         [DisplayName("建立時間")]
+        [IgnoreInsert]
         public DateTime CreatedDateTime { get; set; }
 
         [Column("updated_at")]
         [DisplayName("異動時間")]
+        [IgnoreInsert]
         public DateTime UpdatedDateTime { get; set; }
     }
 }

@@ -6,40 +6,55 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript" src="~/Scripts/datatables.js"></script>
+    <link rel="stylesheet" href="~/Content/datatables.css"/>
+    @Scripts.Render("~/bundles/Common")
 </head>
 <body>
 <div class="container-fluid">
     <nav class="navbar navbar-inverse">
-      
+
         <div class="navbar-header">
             @Html.ActionLink("Uark_Exam", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
         </div>
         <ul class="nav navbar-nav">
+            <li class="dropdown">
+               <a class="dropdown-toggle" data-toggle="dropdown" href="#">Org
+                       <span class="caret"></span></a>
+                       <ul class="dropdown-menu">
+                           <li>@Html.ActionLink("Create Org","CreateOrgs","Uark")</li>
+                           <li>@Html.ActionLink("Org Grid","OrgsGrid","Uark")</li>
+                       </ul>
+            </li>
             <li>@Html.ActionLink("Home", "Index", "Home")</li>
             <li>@Html.ActionLink("About", "About", "Home")</li>
             <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
         </ul>
         <ul class="nav navbar-nav navbar-right" style="margin-right: inherit !important;">
             <li>
-                <a href="#"><span class="glyphicon glyphicon-user"></span>@Session["UserName"]</a>
+                <a href="#">
+                    <span class="glyphicon glyphicon-user"></span>@Session["UserName"]
+                </a>
             </li>
             <li>
-                <a href="@Url.Action("Login","Uark")"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
+                <a href="@Url.Action("Login", "Uark")"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
             </li>
         </ul>
-     
+
     </nav>
     <div class="form-horizontal body-content">
-         @RenderBody()
-            <hr/>
-            <footer>
-                <p>&copy; @DateTime.Now.2023 - My ASP.NET Application</p>
-            </footer>
+        @RenderBody()
+        <hr/>
+        <footer>
+            <p>&copy; @DateTime.Now.2023 - My ASP.NET Application</p>
+        </footer>
     </div>
 </div>
 
-@Scripts.Render("~/bundles/jquery")
-@Scripts.Render("~/bundles/bootstrap")
+
 @RenderSection("scripts", required: false)
 </body>
 </html>

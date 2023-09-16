@@ -1,0 +1,43 @@
+@model Uark_Exam.ViewModal.OrgModal
+
+@{
+    ViewBag.Title = "Create Orgs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script>
+    $(function (){            
+       let isSuccess = '@Model.IsSuccess'=="True";
+       if (!isSuccess)
+       {
+           alert("@Model.ErrorMessage");
+       }         
+        
+    });
+    </script>
+
+@using (Html.BeginForm("CreateOrgs", "Uark", FormMethod.Post))
+{
+    <div class="panel panel-info">
+        <div class="panel-heading">Create Org</div>
+
+        <div class="panel-body">
+            <div class="form-group">
+                @Html.LabelFor(s => s.Title, new { @class = "control-label col-md-3" })
+                <div class="col-md-3">
+                    @Html.TextBoxFor(s => s.Title, new { @class = "form-control", @placeholder = "Please enter title" })
+                    @Html.ValidationMessageFor(s => s.Title, null, new { @class = "text-danger" })
+                </div>
+                @Html.LabelFor(s => s.OrgNo, new { @class = "control-label col-md-3" })
+                <div class="col-md-3">
+                    @Html.TextBoxFor(s => s.OrgNo, new { @class = "form-control", @placeholder = "Please enter OrgNo",@type="number" })
+                    @Html.ValidationMessageFor(s => s.OrgNo, null, new { @class = "text-danger" })
+                </div>
+
+            </div>
+        </div>
+        <div class="panel-footer text-left">
+            <button type="submit" class="btn btn-info">Submit</button>
+        </div>
+
+    </div>
+}

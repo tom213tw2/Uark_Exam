@@ -21,9 +21,25 @@ namespace Uark_Exam
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                 "~/Scripts/bootstrap.js"));
+            bundles.Add(new ScriptBundle("~/bundles/datetimepicker").Include(
+                "~/Scripts/moment.js",
+                "~/Scripts/moment-with-locales.js",
+                "~/Scripts/bootstrap-datetimepicker.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/Common").Include(
+                "~/Scripts/Common.js"));
+
+            bundles.Add(new StyleBundle("~/Content/datetimepicker").Include(
+                "~/Content/bootstrap-datetimepicker.css"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/bootstrap.css"));
+            
+            bundles.Add(new ScriptBundle("~/bundles/Datatables").Include(
+                "~/Scripts/datatables.js"));
+            
+            bundles.Add(new StyleBundle("~/Content/Datatables").Include(
+                "~/Content/datatables.css"));
         }
     }
 }

@@ -2,7 +2,6 @@ using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Uark_Exam.Repository.Madal.DB;
 
 namespace Uark_Exam.ViewModal
 {
@@ -34,7 +33,7 @@ namespace Uark_Exam.ViewModal
     
         [Required]
         [Column("email")]
-        [DisplayName("信箱")]
+        [DisplayName("Email")]
         [RegularExpression(@"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}")]
         public string Email { get; set; }
     
@@ -44,7 +43,8 @@ namespace Uark_Exam.ViewModal
         public string Account { get; set; }
 
         [Column("status")] 
-        [DisplayName("狀態")] public string Status { get; set; } = "Pending Approval";
+        [DisplayName("Status")] 
+        public string Status { get; set; } = "Pending Approval";
 
         
     }

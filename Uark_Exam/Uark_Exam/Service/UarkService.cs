@@ -1,8 +1,10 @@
+using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Comman.Data.Dapper;
 using Uark_Exam.Interface;
 using Uark_Exam.Repository;
+using Uark_Exam.Repository.Madal.DB;
 using Uark_Exam.Repository.Repository;
 using Uark_Exam.ViewModal;
 
@@ -56,6 +58,36 @@ namespace Uark_Exam.Service
                     loginModal.ErrorMessage = "Password is incorrect.";
                     return loginModal;
                 }
+            }
+        }
+
+        public List<OrgModal> GetOrgList()
+        {
+            var orgList = _orgsRepository.GetList().ToList();
+            var orgModalList = new List<OrgModal>();
+            foreach (var org in orgList)
+            {
+                var orgModal = new OrgModal();
+                org.CopyPropertiesTo(orgModal);
+                orgModalList.Add(orgModal);
+            }
+            return orgModalList;
+        }
+
+        public OrgModal CreateOrg(OrgModal orgModal)
+        {
+            var orgsList = _orgsRepository.GetList(new {org_no=orgModal.OrgNo}).ToList();
+            if (orgsList.Any())
+            {
+                orgModal.ErrorMessage = "this OrgNo is already been added!";
+                return orgModal;
+            }
+            else
+            {
+                var orgs = new Orgs();
+                orgModal.CopyPropertiesTo(orgs);
+                _orgsRepository.Insert(orgs);
+                return orgModal;
             }
         }
     }
