@@ -28,7 +28,7 @@ CREATE TABLE dbo.SysLog
 	seq_no UNIQUEIDENTIFIER  DEFAULT NEWID() NOT NULL PRIMARY KEY,
 	account NVARCHAR(50) NOT NULL,
 	ipaddress VARCHAR(15) NOT NULL,
-	login_at DATETIME DEFAULT GETDATE() NOT NULL,
+	login_at DATETIME DEFAULT GETDATE() ,
 	created_at DATETIME DEFAULT GETDATE() NOT NULL
 )
 GO
@@ -38,7 +38,15 @@ CREATE TABLE dbo.Orgs
 	id UNIQUEIDENTIFIER DEFAULT NEWID() NOT NULL PRIMARY KEY,
 	title NVARCHAR(255) NOT NULL,
 	org_no INT NOT NULL,
-	created_at DATETIME,
+	created_at DATETIME NOT NULL,
 	updated_at DATETIME
 )
+GO
+
+CREATE VIEW [dbo].[vUsers]
+AS
+SELECT          u.id, u.name, u.account, u.status, o.org_no, o.title, sl.ipaddress, sl.login_at, u.created_at
+FROM              dbo.Users AS u LEFT OUTER JOIN
+                            dbo.Orgs AS o ON u.org_id = o.id LEFT OUTER JOIN
+                            dbo.SysLog AS sl ON u.account = sl.account
 GO
