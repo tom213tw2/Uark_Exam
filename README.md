@@ -64,7 +64,21 @@
 | seq_no       |uniqueidentifier| No       | Yes         |  
 | account      | NVARCHAR(50)   | No       | No          |
 | ipaddress    | VARCHAR(15)    | No       | No          |
-| login_at     | DATETIME       | No       | No          |
+| login_at     | DATETIME       | Yes       | No          |
 | created_at   | DATETIME       | No       | No          |
+
+## vUsers
+| Column Name| Data Type        |
+|------------|------------------|
+| id         | uniqueidentifier |
+| name       | NVARCHAR(100)    |
+| account    | NVARCHAR(50)     |
+| status     | VARCHAR(20)      |
+| org_no     | INT              |
+| title      | NVARCHAR(255)    |
+| ipaddress  | VARCHAR(15)      |
+| login_at   | DATETIME         |
+| created_at | DATETIME         |
+
 
 
