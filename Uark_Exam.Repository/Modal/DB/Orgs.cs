@@ -12,7 +12,6 @@ namespace Uark_Exam.Repository.Madal.DB
         [Required]
         [Column("Id")]
         [DisplayName("Id")]
-        [IgnoreInsert]
         public Guid Id { get; set; }
 
         [Required]

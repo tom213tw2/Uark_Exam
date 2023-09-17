@@ -11,8 +11,6 @@ namespace Uark_Exam.Repository.Madal.DB
         [Required]
         [Column("seq_no")]
         [DisplayName("SeqNo")]
-        [IgnoreInsert]
-        [IgnoreUpdate]
         public Guid SeqNo { get; set; } 
     
         [Required]

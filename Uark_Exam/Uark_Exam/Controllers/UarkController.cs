@@ -43,7 +43,7 @@ namespace Uark_Exam.Controllers
         public ActionResult CreateMember(LoginModal loginModal)
         {
             _uarkService.CreateMember(loginModal);
-           return loginModal.IsSuccess ? (ActionResult)RedirectToAction("Index", "Home") : View(loginModal);
+           return loginModal.IsSuccess ? (ActionResult)RedirectToAction("UsersGrid") : View(loginModal);
         }
         
         public ActionResult CreateOrgs()
