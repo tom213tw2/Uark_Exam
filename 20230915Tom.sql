@@ -45,8 +45,21 @@ GO
 
 CREATE VIEW [dbo].[vUsers]
 AS
-SELECT          u.id, u.name, u.account, u.status, o.org_no, o.title, sl.ipaddress, sl.login_at, u.created_at
-FROM              dbo.Users AS u LEFT OUTER JOIN
-                            dbo.Orgs AS o ON u.org_id = o.id LEFT OUTER JOIN
-                            dbo.SysLog AS sl ON u.account = sl.account
+SELECT
+    u.id
+   ,u.name
+   ,u.account
+   ,u.status
+   ,o.org_no
+   ,o.title
+   ,sl.ipaddress
+   ,sl.login_at
+   ,u.created_at
+   ,af.id AS af_Id
+FROM dbo.Users AS u
+LEFT JOIN dbo.Orgs AS o
+	ON u.org_id = o.id
+LEFT JOIN dbo.SysLog AS sl
+	ON u.account = sl.account
+	LEFT JOIN Apply_File af ON u.id = af.user_id
 GO
