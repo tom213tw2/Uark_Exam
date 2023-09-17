@@ -9,11 +9,9 @@ namespace Uark_Exam.Service
     {
         public void SendMail(string email, string subject, string body)
         {
-            // Sender's email address and password (you should use app-specific password for security)
             string senderEmail = "enter your email";
             string senderPassword = "enter your password";
-
-            // Recipient's email address
+           
             string recipientEmail = email;
 
             // Create a new MailMessage

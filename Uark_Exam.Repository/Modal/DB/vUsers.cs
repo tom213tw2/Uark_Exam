@@ -10,6 +10,10 @@ namespace Uark_Exam.Repository.Madal.DB
         [Required]
         [Column("id")]
         public Guid Id { get; set; }
+        
+        [Required]
+        [Column("af_Id")]
+        public Guid AfId { get; set; }
 
         [Required]
         [Column("name")]

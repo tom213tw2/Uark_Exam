@@ -13,5 +13,6 @@ namespace Uark_Exam.Interface
         List<UsersListModal> GetUsersList();
         bool ApproveUser(Guid id);
         LoginModal ActiveUser(Guid id);
+        void DownloadFile(Guid id);
     }
 }

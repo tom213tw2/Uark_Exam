@@ -24,10 +24,6 @@ $(function (){
                 alert('User Not Approved');
             }
         });
-    
-    
-
-     
    });
 });
 </script>
@@ -43,6 +39,7 @@ $(function (){
             <th>Ipaddress</th>
             <th>LoginDateTime</th>
             <th>CreateDateTime</th>
+            <th>Download</th>
             <th></th>
         </tr>
         </thead>
@@ -58,6 +55,7 @@ $(function (){
                     <td>@item.Ipaddress</td>
                     <td>@item.LoginDateTime</td>
                     <td>@item.CreateDateTime</td>
+                    <td>@Html.ActionLink("Download","DownloadFile",new {id=item.AfId})</td>
                     <td>
                         @if (item.Status=="Pending Approval")
                         {

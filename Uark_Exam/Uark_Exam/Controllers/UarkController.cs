@@ -102,6 +102,12 @@ namespace Uark_Exam.Controllers
             return View(activeUser);
         }
         
+        [HttpGet]
+        public void DownloadFile(Guid id)
+        {
+            _uarkService.DownloadFile(id);
+        }
+        
        
     }
 }

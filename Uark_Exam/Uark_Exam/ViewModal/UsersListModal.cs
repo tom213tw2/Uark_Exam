@@ -11,6 +11,10 @@ namespace Uark_Exam.ViewModal
         [Required]
         [DisplayName("Id")]
         public Guid Id { get; set; }
+        
+        [Required]
+        [DisplayName("Apply File Id")]
+        public Guid AfId { get; set; }
 
         [Required]
         [DisplayName("Name")]

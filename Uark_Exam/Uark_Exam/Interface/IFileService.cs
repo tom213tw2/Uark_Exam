@@ -1,8 +1,10 @@
+using System;
+
 namespace Uark_Exam.Interface
 {
     public interface IFileService
     {
-        void UploadFile();
-        void DownloadFile();
+        void DownloadFile(string filePath);
+        string UploadFile(Guid id);
     }
 }

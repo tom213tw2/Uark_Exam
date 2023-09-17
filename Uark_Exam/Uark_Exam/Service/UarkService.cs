@@ -122,10 +122,25 @@ namespace Uark_Exam.Service
             {
                 var users = new Users();
                 loginModal.CopyPropertiesTo(users);
-                _usersRepository.Insert(users);
+               
+               var id= _usersRepository.Insert(users);
                 UpdateSyslog(users);
+                UploadFile(id);
                 return loginModal;
             }
+        }
+
+        private void UploadFile(Guid id)
+        {
+            var uploadFile = _fileService.UploadFile(id);
+            if(string.IsNullOrEmpty(uploadFile))
+                return;
+            var applyFile = new ApplyFile
+            {
+                UserId = id,
+                FilePath = uploadFile
+            };
+            _applyFileRepository.Insert(applyFile);
         }
 
         public List<OrgModal> GetOrgList()
@@ -211,6 +226,12 @@ namespace Uark_Exam.Service
                     return loginModal;
                 }
             }
+        }
+
+        public void DownloadFile(Guid id)
+        {
+            var applyFile = _applyFileRepository.Get(id);
+            _fileService.DownloadFile(applyFile.FilePath);
         }
 
         private string mailBody(Guid id)
