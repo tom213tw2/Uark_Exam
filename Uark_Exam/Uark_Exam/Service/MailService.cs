@@ -10,8 +10,8 @@ namespace Uark_Exam.Service
         public void SendMail(string email, string subject, string body)
         {
             // Sender's email address and password (you should use app-specific password for security)
-            string senderEmail = "your_email@gmail.com";
-            string senderPassword = "your_password";
+            string senderEmail = "enter your email";
+            string senderPassword = "enter your password";
 
             // Recipient's email address
             string recipientEmail = email;
@@ -20,10 +20,12 @@ namespace Uark_Exam.Service
             MailMessage mail = new MailMessage(senderEmail, recipientEmail);
             mail.Subject = subject;
             mail.Body = body;
-
+            mail.IsBodyHtml = true;
+           
             // Create a SmtpClient instance
             SmtpClient smtpClient = new SmtpClient("smtp.gmail.com");
             smtpClient.Port = 587; // Gmail SMTP port
+            
             smtpClient.Credentials = new NetworkCredential(senderEmail, senderPassword);
             smtpClient.EnableSsl = true; // Enable SSL for secure email sending
 
@@ -31,6 +33,7 @@ namespace Uark_Exam.Service
             // Send the email
             smtpClient.Send(mail);
         }
+        
         
     }
 }

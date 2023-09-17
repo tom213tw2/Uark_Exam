@@ -19,6 +19,8 @@
     @Scripts.Render("~/bundles/datetimepicker")
     @Scripts.Render("~/bundles/Common")
     @Styles.Render("~/Content/datetimepicker")
+    <script type="text/javascript" src="~/Scripts/fileinput.js"></script>
+    <link rel="stylesheet" href="~/Content/bootstrap-fileinput/css/fileinput.css"/>
     <script type="text/javascript" src="~/Scripts/CreateMember.js"></script>
     <script>
      let GetOrgListUrl='@Url.Action("GetOrgList")';
@@ -27,15 +29,14 @@
             if (!isSuccess)
             {
                 alert("@Model.ErrorMessage");
-            }         
-             
+            }                           
          });
     </script>
 </head>
 <body>
 
 <div>
-    @using (Html.BeginForm("CreateMember", "Uark", FormMethod.Post))
+    @using (Html.BeginForm("CreateMember", "Uark", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         <div class="container container-fluid" style="width:90%">
             <div class="form-horizontal">
@@ -58,31 +59,39 @@
                             @Html.LabelFor(s => s.OrgName, new { @class = "col-md-3 control-label" })
                             <div class="col-md-2">
                                 @Html.TextBoxFor(s => s.OrgName, new { @class = "form-control", @readonly = "readonly", @id = "OrgName" })
-                                @Html.ValidationMessageFor(s=>s.OrgName,null,new {@class="text-danger"})
+                                @Html.ValidationMessageFor(s => s.OrgName, null, new { @class = "text-danger" })
                                 @Html.HiddenFor(s => s.OrgId, new { @id = "OrgId" })
                             </div>
                             <div class="col-md-1">
                                 <button id="OrgList" class="btn btn-info" onclick="return false;" data-toggle="modal">Org List</button>
                             </div>
-                            @Html.LabelFor(s=>s.Email,new {@class="control-label col-md-3"})
+                            @Html.LabelFor(s => s.Email, new { @class = "control-label col-md-3" })
                             <div class="col-md-3">
-                                @Html.TextBoxFor(s=>s.Email,new {@class="form-control",@type="email",@placeholder="Please enter email"})
-                                @Html.ValidationMessageFor(s=>s.Email,null,new {@class="text-danger"})
+                                @Html.TextBoxFor(s => s.Email, new { @class = "form-control", @type = "email", @placeholder = "Please enter email" })
+                                @Html.ValidationMessageFor(s => s.Email, null, new { @class = "text-danger" })
                             </div>
                         </div>
                         <div class="form-group">
-                            @Html.LabelFor(s=>s.Account,new {@class="control-label col-md-3"})
+                            @Html.LabelFor(s => s.Account, new { @class = "control-label col-md-3" })
                             <div class="col-md-3">
-                                @Html.TextBoxFor(s=>s.Account,new {@class="form-control",@placeholder="Please enter account"})
-                                @Html.ValidationMessageFor(s=>s.Account,null,new {@class="text-danger"})
+                                @Html.TextBoxFor(s => s.Account, new { @class = "form-control", @placeholder = "Please enter account" })
+                                @Html.ValidationMessageFor(s => s.Account, null, new { @class = "text-danger" })
                             </div>
-                            @Html.LabelFor(s=>s.Password,new {@class="control-label col-md-3"})
+                            @Html.LabelFor(s => s.Password, new { @class = "control-label col-md-3" })
                             <div class="col-md-3">
-                                @Html.PasswordFor(s=>s.Password,new {@class="form-control",@placeholder="Please enter password"})
-                                @Html.ValidationMessageFor(s=>s.Password,null,new {@class="text-danger"})
+                                @Html.PasswordFor(s => s.Password, new { @class = "form-control", @placeholder = "Please enter password" })
+                                @Html.ValidationMessageFor(s => s.Password, null, new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(s=>s.File,new { @class = "control-label col-md-3" })
+                            <div class="col-md-9">
+                                @Html.TextBoxFor(s=>s.File,new {@id="File",@type = "file", @placeholder = "Please enter file",@data_show_preview="false",@data_show_upload="false",@data_msg_placeholder="Select {files} for upload..."})
+                                @Html.ValidationMessageFor(s => s.File, null, new { @class = "text-danger" })
                             </div>
                         </div>
 
+                       
                     </div>
                     <div class="panel-footer text-left">
                         <button type="submit" class="btn btn-info">Submit</button>

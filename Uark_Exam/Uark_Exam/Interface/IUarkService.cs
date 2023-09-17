@@ -12,5 +12,6 @@ namespace Uark_Exam.Interface
         LoginModal CreateMember(LoginModal loginModal);
         List<UsersListModal> GetUsersList();
         bool ApproveUser(Guid id);
+        LoginModal ActiveUser(Guid id);
     }
 }

@@ -1,0 +1,29 @@
+@model Uark_Exam.ViewModal.LoginModal
+
+<script>
+ let isSuccess = '@Model.IsSuccess'=="True";
+       if (!isSuccess)
+       {
+           alert("@Model.ErrorMessage");
+       }  
+</script>
+@{
+    ViewBag.Title = "Active";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (Model.Name !=null)
+{
+    <div class="panel panel-info">
+        <div class="panel-heading">Active User</div>
+
+        <div class="panel-body">
+            <p> Hi @Model.Name:</p>
+            <p>Your Account(@Model.Account) is Already Actived</p>
+            <p>Please login ,thanks.</p>
+            <p>@Html.ActionLink("Login", "Login", "Uark")</p>
+
+
+        </div>
+    </div>
+}

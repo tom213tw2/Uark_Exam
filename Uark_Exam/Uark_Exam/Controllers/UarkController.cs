@@ -1,4 +1,5 @@
 using System;
+using System.Web;
 using System.Web.Mvc;
 using Uark_Exam.Filter;
 using Uark_Exam.Interface;
@@ -29,7 +30,7 @@ namespace Uark_Exam.Controllers
         public ActionResult Login(LoginModal loginModal)
         {
             _uarkService.ValidateUser(loginModal);
-            return loginModal.IsSuccess ? (ActionResult)RedirectToAction("Index", "Home") : View(loginModal);
+            return loginModal.IsSuccess ? (ActionResult)RedirectToAction("UsersGrid", "Uark") : View(loginModal);
         }
         
         [HttpGet]
@@ -40,7 +41,7 @@ namespace Uark_Exam.Controllers
         
         [HttpPost]
         public ActionResult CreateMember(LoginModal loginModal)
-        {   
+        {
             _uarkService.CreateMember(loginModal);
            return loginModal.IsSuccess ? (ActionResult)RedirectToAction("Index", "Home") : View(loginModal);
         }
@@ -93,6 +94,12 @@ namespace Uark_Exam.Controllers
                 MaxJsonLength = int.MaxValue,
                 JsonRequestBehavior = JsonRequestBehavior.AllowGet
             };
+        }
+        [HttpGet]
+        public ActionResult ActiveUser(Guid id)
+        {
+            var activeUser = _uarkService.ActiveUser(id);
+            return View(activeUser);
         }
         
        

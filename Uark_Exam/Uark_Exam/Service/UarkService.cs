@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Web;
 using Comman.Data.Dapper;
 using Uark_Exam.Interface;
@@ -18,6 +20,8 @@ namespace Uark_Exam.Service
         private OrgsRepository _orgsRepository;
         private SysLogRepository _sysLogRepository;
         private vUsersRepository _vUsersRepository;
+        private IFileService _fileService;
+        private IMailService _mailService;
 
         public UarkService()
         {
@@ -26,6 +30,8 @@ namespace Uark_Exam.Service
             _orgsRepository = new OrgsRepository(QueryRepository.Default);
             _sysLogRepository = new SysLogRepository(QueryRepository.Default);
             _vUsersRepository = new vUsersRepository(QueryRepository.Default);
+            _fileService = new FileService();
+            _mailService = new MailService();
         }
 
         public LoginModal ValidateUser(LoginModal loginModal)
@@ -89,21 +95,28 @@ namespace Uark_Exam.Service
 
         public LoginModal CreateMember(LoginModal loginModal)
         {
-            var usersList=_usersRepository.GetList("where account=@account or name=@name", new { account = loginModal.Account ,name=loginModal.Name});
-           if (usersList.Any())
+            var filesCount = HttpContext.Current.Request.Files.Count;
+            var file = HttpContext.Current.Request.Files[0];
+            var fileName = DateTime.Now.ToString("yyyyMMddHHmmss") + file.FileName;
+            var filePath = HttpContext.Current.Server.MapPath("~/UploadFiles/" + fileName);
+            //file.SaveAs(filePath);
+
+
+            var usersList = _usersRepository.GetList("where account=@account or name=@name",
+                new { account = loginModal.Account, name = loginModal.Name });
+            if (usersList.Any())
             {
                 var user = usersList.FirstOrDefault();
                 if (user.Account == loginModal.Account)
                 {
                     loginModal.ErrorMessage = "this account is already been added!";
-                   
                 }
                 else if (user.Name == loginModal.Name)
                 {
                     loginModal.ErrorMessage = "this name is already been added!";
                 }
+
                 return loginModal;
-               
             }
             else
             {
@@ -160,16 +173,57 @@ namespace Uark_Exam.Service
             return usersModalList;
         }
 
-        //need to refactor
         public bool ApproveUser(Guid id)
         {
-            var usersList = _usersRepository.GetList(new { id = id }).ToList();
-            if (!usersList.Any()) return false;
-            var user = usersList.FirstOrDefault();
+            var user = _usersRepository.Get(id);
+            if (user == null) return false;
+
             user.Status = "Approved";
             user.UpdatedDateTime = DateTime.Now;
             _usersRepository.Update(user);
+            _=Task.Run(() => { _mailService.SendMail(user.Email, "Mail notice", mailBody(user.Id)); });
+
             return true;
+        }
+
+        public LoginModal ActiveUser(Guid id)
+        {
+            var loginModal = new LoginModal();
+            var user = _usersRepository.Get(id);
+            if (user == null)
+            {
+                loginModal.ErrorMessage = "Can't find this id!";
+                return loginModal;
+            }
+            else
+            {
+                if (user.Status == "Active")
+                {
+                    loginModal.ErrorMessage = "This Account is already approved!";
+                    return loginModal;
+                }
+                else
+                {
+                    user.Status = "Active";
+                    user.UpdatedDateTime = DateTime.Now;
+                    _usersRepository.Update(user);
+                    user.CopyPropertiesTo(loginModal);
+                    return loginModal;
+                }
+            }
+        }
+
+        private string mailBody(Guid id)
+        {
+            var users = _usersRepository.Get(id);
+            StringBuilder sb = new StringBuilder();
+            sb.Append($"<p>Dear {users.Name}:</p>");
+            sb.Append("<p>Your account has been approved,please click the link to active your account.</p>");
+            sb.Append($"<a href='http://127.0.0.1:9527/Uark/ActiveUser?id={users.Id}'>Active User</a>");
+            sb.Append("<p>Best Regards,</p>");
+            sb.Append("<p>Uark Exam Team</p>");
+
+            return sb.ToString();
         }
     }
 }

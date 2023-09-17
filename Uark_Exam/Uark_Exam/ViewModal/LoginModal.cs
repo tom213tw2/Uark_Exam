@@ -47,5 +47,9 @@ namespace Uark_Exam.ViewModal
         [Column("status")] 
         [DisplayName("Status")] 
         public string Status { get; set; } = "Pending Approval";
+
+        [Required]
+        [DisplayName("File")] 
+        public string File { get; set; }
     }
 }

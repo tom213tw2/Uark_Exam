@@ -1,4 +1,5 @@
 $(function (){
+    $('#File').fileinput();
     $('#OrgList').on('click',function ()
     {
         let data=  GetAjaxData('Post',false,GetOrgListUrl,null);
