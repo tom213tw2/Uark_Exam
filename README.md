@@ -71,6 +71,7 @@
 | Column Name| Data Type        |
 |------------|------------------|
 | id         | uniqueidentifier |
+|AfId        | uniqueidentifier |
 | name       | NVARCHAR(100)    |
 | account    | NVARCHAR(50)     |
 | status     | VARCHAR(20)      |
