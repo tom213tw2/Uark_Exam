@@ -12,9 +12,9 @@ namespace Uark_Exam.Controllers
     public class UarkController : Controller
     {
         private readonly IUarkService _uarkService;
-        public UarkController()
+        public UarkController(IUarkService uarkService)
         {
-            _uarkService = new UarkService();
+            _uarkService = uarkService;
         }
         // GET
         public ActionResult Index()

@@ -1,0 +1,548 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.7": {
+      "Castle.Core/5.1.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Configuration"
+        ],
+        "compile": {
+          "lib/net462/Castle.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net462/Castle.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "NSubstitute/5.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Castle.Core": "5.1.1",
+          "System.Threading.Tasks.Extensions": "4.3.0"
+        },
+        "compile": {
+          "lib/net462/NSubstitute.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net462/NSubstitute.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "NUnit/2.6.4": {
+        "type": "package",
+        "compile": {
+          "lib/nunit.framework.dll": {}
+        },
+        "runtime": {
+          "lib/nunit.framework.dll": {}
+        }
+      },
+      "System.Threading.Tasks.Extensions/4.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Xamarin.UITest/2.2.4": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Xamarin.UITest.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net45/Xamarin.UITest.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Uark_Exam/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Uark_Exam.Repository": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Uark_Exam.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Uark_Exam.dll": {}
+        }
+      },
+      "Uark_Exam.Repository/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Uark_Exam.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Uark_Exam.Repository.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7/win": {
+      "Castle.Core/5.1.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Configuration"
+        ],
+        "compile": {
+          "lib/net462/Castle.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net462/Castle.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "NSubstitute/5.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Castle.Core": "5.1.1",
+          "System.Threading.Tasks.Extensions": "4.3.0"
+        },
+        "compile": {
+          "lib/net462/NSubstitute.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net462/NSubstitute.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "NUnit/2.6.4": {
+        "type": "package",
+        "compile": {
+          "lib/nunit.framework.dll": {}
+        },
+        "runtime": {
+          "lib/nunit.framework.dll": {}
+        }
+      },
+      "System.Threading.Tasks.Extensions/4.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Xamarin.UITest/2.2.4": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Xamarin.UITest.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net45/Xamarin.UITest.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Uark_Exam/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Uark_Exam.Repository": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Uark_Exam.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Uark_Exam.dll": {}
+        }
+      },
+      "Uark_Exam.Repository/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Uark_Exam.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Uark_Exam.Repository.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7/win-x64": {
+      "Castle.Core/5.1.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Configuration"
+        ],
+        "compile": {
+          "lib/net462/Castle.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net462/Castle.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "NSubstitute/5.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Castle.Core": "5.1.1",
+          "System.Threading.Tasks.Extensions": "4.3.0"
+        },
+        "compile": {
+          "lib/net462/NSubstitute.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net462/NSubstitute.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "NUnit/2.6.4": {
+        "type": "package",
+        "compile": {
+          "lib/nunit.framework.dll": {}
+        },
+        "runtime": {
+          "lib/nunit.framework.dll": {}
+        }
+      },
+      "System.Threading.Tasks.Extensions/4.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Xamarin.UITest/2.2.4": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Xamarin.UITest.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net45/Xamarin.UITest.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Uark_Exam/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Uark_Exam.Repository": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Uark_Exam.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Uark_Exam.dll": {}
+        }
+      },
+      "Uark_Exam.Repository/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Uark_Exam.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Uark_Exam.Repository.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7/win-x86": {
+      "Castle.Core/5.1.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Configuration"
+        ],
+        "compile": {
+          "lib/net462/Castle.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net462/Castle.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "NSubstitute/5.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Castle.Core": "5.1.1",
+          "System.Threading.Tasks.Extensions": "4.3.0"
+        },
+        "compile": {
+          "lib/net462/NSubstitute.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net462/NSubstitute.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "NUnit/2.6.4": {
+        "type": "package",
+        "compile": {
+          "lib/nunit.framework.dll": {}
+        },
+        "runtime": {
+          "lib/nunit.framework.dll": {}
+        }
+      },
+      "System.Threading.Tasks.Extensions/4.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Xamarin.UITest/2.2.4": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Xamarin.UITest.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net45/Xamarin.UITest.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Uark_Exam/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Uark_Exam.Repository": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Uark_Exam.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Uark_Exam.dll": {}
+        }
+      },
+      "Uark_Exam.Repository/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Uark_Exam.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Uark_Exam.Repository.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Castle.Core/5.1.1": {
+      "sha512": "rpYtIczkzGpf+EkZgDr9CClTdemhsrwA/W5hMoPjLkRFnXzH44zDLoovXeKtmxb1ykXK9aJVODSpiJml8CTw2g==",
+      "type": "package",
+      "path": "castle.core/5.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ASL - Apache Software Foundation License.txt",
+        "CHANGELOG.md",
+        "LICENSE",
+        "castle-logo.png",
+        "castle.core.5.1.1.nupkg.sha512",
+        "castle.core.nuspec",
+        "lib/net462/Castle.Core.dll",
+        "lib/net462/Castle.Core.xml",
+        "lib/net6.0/Castle.Core.dll",
+        "lib/net6.0/Castle.Core.xml",
+        "lib/netstandard2.0/Castle.Core.dll",
+        "lib/netstandard2.0/Castle.Core.xml",
+        "lib/netstandard2.1/Castle.Core.dll",
+        "lib/netstandard2.1/Castle.Core.xml",
+        "readme.txt"
+      ]
+    },
+    "NSubstitute/5.1.0": {
+      "sha512": "ZCqOP3Kpp2ea7QcLyjMU4wzE+0wmrMN35PQMsdPOHYc2IrvjmusG9hICOiqiOTPKN0gJon6wyCn6ZuGHdNs9hQ==",
+      "type": "package",
+      "path": "nsubstitute/5.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/net462/NSubstitute.dll",
+        "lib/net462/NSubstitute.xml",
+        "lib/net6.0/NSubstitute.dll",
+        "lib/net6.0/NSubstitute.xml",
+        "lib/netstandard2.0/NSubstitute.dll",
+        "lib/netstandard2.0/NSubstitute.xml",
+        "nsubstitute.5.1.0.nupkg.sha512",
+        "nsubstitute.nuspec"
+      ]
+    },
+    "NUnit/2.6.4": {
+      "sha512": "cmSPvaCMRSP0DI19FP1Liw9DyJY3E/vOY1OrVaeJBZpZFWHkmT3fB9ngGWnZX/ftvA7zJEbghEaw3Yd+u4YFAw==",
+      "type": "package",
+      "path": "nunit/2.6.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/nunit.framework.dll",
+        "lib/nunit.framework.xml",
+        "license.txt",
+        "nunit.2.6.4.nupkg.sha512",
+        "nunit.nuspec"
+      ]
+    },
+    "System.Threading.Tasks.Extensions/4.3.0": {
+      "sha512": "npvJkVKl5rKXrtl1Kkm6OhOUaYGEiF9wFbppFRWSMoApKzt2PiPHT2Bb8a5sAWxprvdOAtvaARS9QYMznEUtug==",
+      "type": "package",
+      "path": "system.threading.tasks.extensions/4.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/netstandard1.0/System.Threading.Tasks.Extensions.dll",
+        "lib/netstandard1.0/System.Threading.Tasks.Extensions.xml",
+        "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.dll",
+        "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.xml",
+        "system.threading.tasks.extensions.4.3.0.nupkg.sha512",
+        "system.threading.tasks.extensions.nuspec"
+      ]
+    },
+    "Xamarin.UITest/2.2.4": {
+      "sha512": "f6qeC/ZNYdXxvXvE2BhN6WjXH+wX11JRBYZFvAtkQPPe0ANKlwgZY3E9ooX52YaBuWsoUYUePppJO70VQW+m3g==",
+      "type": "package",
+      "path": "xamarin.uitest/2.2.4",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "Xamarin.UITest-License.rtf",
+        "lib/net45/Xamarin.UITest.dll",
+        "lib/net45/Xamarin.UITest.xml",
+        "lib/portable-net45+win8+wp8/Xamarin.UITest.dll",
+        "lib/portable-net45+win8+wp8/Xamarin.UITest.xml",
+        "lib/tools/test-cloud.exe",
+        "tools/test-cloud.exe",
+        "xamarin.uitest.2.2.4.nupkg.sha512",
+        "xamarin.uitest.nuspec"
+      ]
+    },
+    "Uark_Exam/1.0.0": {
+      "type": "project",
+      "path": "../Uark_Exam/Uark_Exam.csproj",
+      "msbuildProject": "../Uark_Exam/Uark_Exam.csproj"
+    },
+    "Uark_Exam.Repository/1.0.0": {
+      "type": "project",
+      "path": "../../Uark_Exam.Repository/Uark_Exam.Repository.csproj",
+      "msbuildProject": "../../Uark_Exam.Repository/Uark_Exam.Repository.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.7": [
+      "NSubstitute >= 5.1.0",
+      "NUnit >= 2.6.4",
+      "Uark_Exam >= 1.0.0",
+      "Uark_Exam.Repository >= 1.0.0",
+      "Xamarin.UITest >= 2.2.4"
+    ]
+  },
+  "packageFolders": {
+    "/Users/tomkao/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam/UITestProject1/UITestProject1.csproj",
+      "projectName": "UITestProject1",
+      "projectPath": "/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam/UITestProject1/UITestProject1.csproj",
+      "packagesPath": "/Users/tomkao/.nuget/packages/",
+      "outputPath": "/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam/UITestProject1/obj/",
+      "projectStyle": "PackageReference",
+      "skipContentFileWrite": true,
+      "configFilePaths": [
+        "/Users/tomkao/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net47"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net47": {
+          "projectReferences": {
+            "/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam.Repository/Uark_Exam.Repository.csproj": {
+              "projectPath": "/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam.Repository/Uark_Exam.Repository.csproj"
+            },
+            "/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam/Uark_Exam/Uark_Exam.csproj": {
+              "projectPath": "/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam/Uark_Exam/Uark_Exam.csproj"
+            }
+          }
+        }
+      }
+    },
+    "frameworks": {
+      "net47": {
+        "dependencies": {
+          "NSubstitute": {
+            "target": "Package",
+            "version": "[5.1.0, )"
+          },
+          "NUnit": {
+            "target": "Package",
+            "version": "[2.6.4, )"
+          },
+          "Xamarin.UITest": {
+            "target": "Package",
+            "version": "[2.2.4, )"
+          }
+        }
+      }
+    },
+    "runtimes": {
+      "win": {
+        "#import": []
+      },
+      "win-x64": {
+        "#import": []
+      },
+      "win-x86": {
+        "#import": []
+      }
+    }
+  }
+}

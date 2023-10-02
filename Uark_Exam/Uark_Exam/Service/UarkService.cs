@@ -15,23 +15,23 @@ namespace Uark_Exam.Service
 {
     public class UarkService : IUarkService
     {
-        private UsersRepository _usersRepository;
-        private ApplyFileRepository _applyFileRepository;
-        private OrgsRepository _orgsRepository;
-        private SysLogRepository _sysLogRepository;
-        private vUsersRepository _vUsersRepository;
-        private IFileService _fileService;
-        private IMailService _mailService;
+        private readonly UsersRepository _usersRepository;
+        private readonly ApplyFileRepository _applyFileRepository;
+        private readonly OrgsRepository _orgsRepository;
+        private readonly SysLogRepository _sysLogRepository;
+        private readonly vUsersRepository _vUsersRepository;
+        private readonly IFileService _fileService;
+        private readonly IMailService _mailService;
 
-        public UarkService()
+        public UarkService(IFileService fileService,IMailService mailService)
         {
             _usersRepository = new UsersRepository(QueryRepository.Default);
             _applyFileRepository = new ApplyFileRepository(QueryRepository.Default);
             _orgsRepository = new OrgsRepository(QueryRepository.Default);
             _sysLogRepository = new SysLogRepository(QueryRepository.Default);
             _vUsersRepository = new vUsersRepository(QueryRepository.Default);
-            _fileService = new FileService();
-            _mailService = new MailService();
+            _fileService = fileService;
+            _mailService = mailService;
         }
 
         public LoginModal ValidateUser(LoginModal loginModal)

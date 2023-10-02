@@ -16,3 +16,7 @@ Uark_Exam/Uark_Exam/obj/Debug/
 Uark_Exam.Repository/obj/Debug/
 
 Uark_Exam.Repository/bin/Debug/
+
+Uark_Exam/packages/Microsoft.Bcl.AsyncInterfaces.8.0.0-rc.1.23419.4/lib/net462/
+
+*.targets

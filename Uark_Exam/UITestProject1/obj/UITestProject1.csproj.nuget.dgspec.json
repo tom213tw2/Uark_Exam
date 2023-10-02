@@ -1,0 +1,104 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam/UITestProject1/UITestProject1.csproj": {}
+  },
+  "projects": {
+    "/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam.Repository/Uark_Exam.Repository.csproj": {
+      "restore": {
+        "projectUniqueName": "/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam.Repository/Uark_Exam.Repository.csproj",
+        "projectName": "Uark_Exam.Repository",
+        "projectPath": "/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam.Repository/Uark_Exam.Repository.csproj",
+        "frameworks": {
+          "net47": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net47": {}
+      }
+    },
+    "/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam/Uark_Exam/Uark_Exam.csproj": {
+      "restore": {
+        "projectUniqueName": "/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam/Uark_Exam/Uark_Exam.csproj",
+        "projectName": "Uark_Exam",
+        "projectPath": "/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam/Uark_Exam/Uark_Exam.csproj",
+        "frameworks": {
+          "net47": {
+            "projectReferences": {
+              "/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam.Repository/Uark_Exam.Repository.csproj": {
+                "projectPath": "/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam.Repository/Uark_Exam.Repository.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net47": {}
+      }
+    },
+    "/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam/UITestProject1/UITestProject1.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam/UITestProject1/UITestProject1.csproj",
+        "projectName": "UITestProject1",
+        "projectPath": "/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam/UITestProject1/UITestProject1.csproj",
+        "packagesPath": "/Users/tomkao/.nuget/packages/",
+        "outputPath": "/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam/UITestProject1/obj/",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "/Users/tomkao/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net47"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net47": {
+            "projectReferences": {
+              "/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam.Repository/Uark_Exam.Repository.csproj": {
+                "projectPath": "/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam.Repository/Uark_Exam.Repository.csproj"
+              },
+              "/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam/Uark_Exam/Uark_Exam.csproj": {
+                "projectPath": "/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam/Uark_Exam/Uark_Exam.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net47": {
+          "dependencies": {
+            "NSubstitute": {
+              "target": "Package",
+              "version": "[5.1.0, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[2.6.4, )"
+            },
+            "Xamarin.UITest": {
+              "target": "Package",
+              "version": "[2.2.4, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

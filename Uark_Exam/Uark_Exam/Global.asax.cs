@@ -12,12 +12,18 @@ namespace Uark_Exam
 {
     public class MvcApplication : System.Web.HttpApplication
     {
+        public static void InitModule()
+        {
+            RegisterModule(typeof(ServiceScopeHttpModule));
+        }
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            DependencyInjectionConfig.Register();
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+           
         }
 
         protected void Application_Error(object sender, EventArgs e)

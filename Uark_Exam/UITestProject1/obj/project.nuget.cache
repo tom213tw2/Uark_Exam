@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "9YpSf+MytlUvTGq1VVS2zwfrqO8Fue27w0fG7VT2Vc422pj/dSNkRkGh4BbQHVYwh8dQA7HQdldzjiPETRVOLQ==",
+  "success": true,
+  "projectFilePath": "/Users/tomkao/Documents/Git/Uark_Exam/Uark_Exam/UITestProject1/UITestProject1.csproj",
+  "expectedPackageFiles": [
+    "/Users/tomkao/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",
+    "/Users/tomkao/.nuget/packages/nsubstitute/5.1.0/nsubstitute.5.1.0.nupkg.sha512",
+    "/Users/tomkao/.nuget/packages/nunit/2.6.4/nunit.2.6.4.nupkg.sha512",
+    "/Users/tomkao/.nuget/packages/system.threading.tasks.extensions/4.3.0/system.threading.tasks.extensions.4.3.0.nupkg.sha512",
+    "/Users/tomkao/.nuget/packages/xamarin.uitest/2.2.4/xamarin.uitest.2.2.4.nupkg.sha512"
+  ],
+  "logs": []
+}
